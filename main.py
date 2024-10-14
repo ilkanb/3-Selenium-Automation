@@ -27,8 +27,10 @@ password_field = WebDriverWait(driver, 10).until(EC.visibility_of_element_locate
 login_button = driver.find_element(By.ID, 'login')
 
 #fill the spaces and click button
-username_field.send_keys('ilkanb')
-password_field.send_keys('Kokarcorap12.3$')
+user_name = os.getenv("SELENIUM_NAME")
+user_password = os.getenv("SELENIUM_PASSWORD")
+username_field.send_keys(user_name)
+password_field.send_keys(user_password)
 driver.execute_script("arguments[0].click();",login_button)
 
 #click elements and textbox
